@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/account")
 public class AccountController {
@@ -30,8 +32,13 @@ public class AccountController {
         return ResponseEntity.ok(update);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String>deleteAccount(@PathVariable Long id){
-        service.deleteAccount(id);
+    public ResponseEntity<String>closeAccount(@PathVariable Long id){
+        service.closeAccount(id);
         return ResponseEntity.ok("Deleted successfully");
+    }
+    @GetMapping("getallaccounts")
+    public List<Account> getAllAccountDetails(){
+        List<Account> getall = service.getAllAccountDetails();
+        return getall;
     }
 }

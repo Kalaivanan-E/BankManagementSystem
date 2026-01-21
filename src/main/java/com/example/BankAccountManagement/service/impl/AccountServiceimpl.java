@@ -7,6 +7,8 @@ import com.example.BankAccountManagement.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountServiceimpl implements AccountService {
     @Autowired
@@ -39,8 +41,14 @@ public class AccountServiceimpl implements AccountService {
                 savedA2.getBalance()
         );
     }
-    public void  deleteAccount(Long id){
+    public void  closeAccount(Long id){
         Account del = repo.findByid(id);
         repo.delete(del);
+    }
+
+    @Override
+    public List<Account> getAllAccountDetails() {
+        List<Account> listofall = repo.findAll();
+        return listofall;
     }
 }
