@@ -11,7 +11,7 @@ public interface AccountService {
     AccountDTO updateAccount(AccountDTO accountdto, Long id);
     void closeAccount(Long id);
     public List<Account> getAllAccountDetails();
-//    public Account depositAmount(Long id, Double amount);
+    public Account depositAmount(Long id, Double amount);
 //    public Account withdrawAmount(Long id, Double amount);
 
 

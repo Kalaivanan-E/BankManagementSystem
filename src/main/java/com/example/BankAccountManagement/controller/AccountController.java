@@ -41,4 +41,9 @@ public class AccountController {
         List<Account> getall = service.getAllAccountDetails();
         return getall;
     }
+    @PutMapping("deposit/{id}/{amount}")
+    public ResponseEntity<Account> despositAmount(@PathVariable Long id, @PathVariable Double amount){
+        Account update = service.depositAmount(id,amount);
+        return ResponseEntity.ok(update);
+    }
 }
