@@ -46,4 +46,9 @@ public class AccountController {
         Account update = service.depositAmount(id,amount);
         return ResponseEntity.ok(update);
     }
+    @PutMapping("withdraw/{id}/{amount}")
+    public ResponseEntity<Account>withdrawAmount(@PathVariable Long id, @PathVariable Double amount){
+        Account update = service.withdrawAmount(id, amount);
+        return ResponseEntity.ok(update);
+    }
 }

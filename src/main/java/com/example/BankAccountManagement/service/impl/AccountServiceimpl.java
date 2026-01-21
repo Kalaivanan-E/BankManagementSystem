@@ -59,4 +59,10 @@ public class AccountServiceimpl implements AccountService {
         account.setBalance(account.getBalance() + amount);
         return repo.save(account);
     }
+    public Account withdrawAmount(Long id, Double amount){
+        Account account = repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+        account.setBalance(account.getBalance()-amount);
+        return repo.save(account);
+    }
 }

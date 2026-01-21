@@ -12,7 +12,7 @@ public interface AccountService {
     void closeAccount(Long id);
     public List<Account> getAllAccountDetails();
     public Account depositAmount(Long id, Double amount);
-//    public Account withdrawAmount(Long id, Double amount);
+    public Account withdrawAmount(Long id, Double amount);
 
 
 }
